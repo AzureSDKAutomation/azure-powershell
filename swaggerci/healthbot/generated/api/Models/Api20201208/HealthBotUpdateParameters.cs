@@ -1,0 +1,176 @@
+namespace Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208
+{
+    using static Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Extensions;
+
+    /// <summary>Parameters for updating a HealthBot.</summary>
+    public partial class HealthBotUpdateParameters :
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParameters,
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersInternal
+    {
+
+        /// <summary>Backing field for <see cref="Identity" /> property.</summary>
+        private Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentity _identity;
+
+        /// <summary>The identity of the Healthbot.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Owned)]
+        internal Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentity Identity { get => (this._identity = this._identity ?? new Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.Identity()); set => this._identity = value; }
+
+        /// <summary>
+        /// The principal ID of resource identity. This property will only be provided for a system assigned identity.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Inlined)]
+        public string IdentityPrincipalId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).PrincipalId; }
+
+        /// <summary>
+        /// The tenant ID of resource. This property will only be provided for a system assigned identity.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Inlined)]
+        public string IdentityTenantId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).TenantId; }
+
+        /// <summary>
+        /// The identity type. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user
+        /// assigned identities. The type 'None' will remove any identities from the Healthbot
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Inlined)]
+        public Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.ResourceIdentityType? IdentityType { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).Type; set => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).Type = value ?? ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.ResourceIdentityType)""); }
+
+        /// <summary>
+        /// The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource
+        /// ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Inlined)]
+        public Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityUserAssignedIdentities IdentityUserAssignedIdentity { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).UserAssignedIdentity; set => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).UserAssignedIdentity = value ?? null /* model class */; }
+
+        /// <summary>Internal Acessors for Identity</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentity Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersInternal.Identity { get => (this._identity = this._identity ?? new Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.Identity()); set { {_identity = value;} } }
+
+        /// <summary>Internal Acessors for IdentityPrincipalId</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersInternal.IdentityPrincipalId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).PrincipalId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).PrincipalId = value; }
+
+        /// <summary>Internal Acessors for IdentityTenantId</summary>
+        string Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersInternal.IdentityTenantId { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).TenantId; set => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityInternal)Identity).TenantId = value; }
+
+        /// <summary>Internal Acessors for Sku</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISku Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersInternal.Sku { get => (this._sku = this._sku ?? new Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.Sku()); set { {_sku = value;} } }
+
+        /// <summary>Backing field for <see cref="Sku" /> property.</summary>
+        private Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISku _sku;
+
+        /// <summary>SKU of the HealthBot.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Owned)]
+        internal Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISku Sku { get => (this._sku = this._sku ?? new Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.Sku()); set => this._sku = value; }
+
+        /// <summary>The name of the HealthBot SKU</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Inlined)]
+        public Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.SkuName? SkuName { get => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISkuInternal)Sku).Name; set => ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISkuInternal)Sku).Name = value ?? ((Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.SkuName)""); }
+
+        /// <summary>Backing field for <see cref="Tag" /> property.</summary>
+        private Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersTags _tag;
+
+        /// <summary>Tags for a HealthBot.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Origin(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.PropertyOrigin.Owned)]
+        public Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersTags Tag { get => (this._tag = this._tag ?? new Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.HealthBotUpdateParametersTags()); set => this._tag = value; }
+
+        /// <summary>Creates an new <see cref="HealthBotUpdateParameters" /> instance.</summary>
+        public HealthBotUpdateParameters()
+        {
+
+        }
+    }
+    /// Parameters for updating a HealthBot.
+    public partial interface IHealthBotUpdateParameters :
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.IJsonSerializable
+    {
+        /// <summary>
+        /// The principal ID of resource identity. This property will only be provided for a system assigned identity.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = true,
+        Description = @"The principal ID of resource identity. This property will only be provided for a system assigned identity.",
+        SerializedName = @"principalId",
+        PossibleTypes = new [] { typeof(string) })]
+        string IdentityPrincipalId { get;  }
+        /// <summary>
+        /// The tenant ID of resource. This property will only be provided for a system assigned identity.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = true,
+        Description = @"The tenant ID of resource. This property will only be provided for a system assigned identity.",
+        SerializedName = @"tenantId",
+        PossibleTypes = new [] { typeof(string) })]
+        string IdentityTenantId { get;  }
+        /// <summary>
+        /// The identity type. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user
+        /// assigned identities. The type 'None' will remove any identities from the Healthbot
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The identity type. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user assigned identities. The type 'None' will remove any identities from the Healthbot",
+        SerializedName = @"type",
+        PossibleTypes = new [] { typeof(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.ResourceIdentityType) })]
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.ResourceIdentityType? IdentityType { get; set; }
+        /// <summary>
+        /// The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource
+        /// ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+        /// </summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.",
+        SerializedName = @"userAssignedIdentities",
+        PossibleTypes = new [] { typeof(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityUserAssignedIdentities) })]
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityUserAssignedIdentities IdentityUserAssignedIdentity { get; set; }
+        /// <summary>The name of the HealthBot SKU</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"The name of the HealthBot SKU",
+        SerializedName = @"name",
+        PossibleTypes = new [] { typeof(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.SkuName) })]
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.SkuName? SkuName { get; set; }
+        /// <summary>Tags for a HealthBot.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Tags for a HealthBot.",
+        SerializedName = @"tags",
+        PossibleTypes = new [] { typeof(Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersTags) })]
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersTags Tag { get; set; }
+
+    }
+    /// Parameters for updating a HealthBot.
+    internal partial interface IHealthBotUpdateParametersInternal
+
+    {
+        /// <summary>The identity of the Healthbot.</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentity Identity { get; set; }
+        /// <summary>
+        /// The principal ID of resource identity. This property will only be provided for a system assigned identity.
+        /// </summary>
+        string IdentityPrincipalId { get; set; }
+        /// <summary>
+        /// The tenant ID of resource. This property will only be provided for a system assigned identity.
+        /// </summary>
+        string IdentityTenantId { get; set; }
+        /// <summary>
+        /// The identity type. The type 'SystemAssigned, UserAssigned' includes both an implicitly created identity and a set of user
+        /// assigned identities. The type 'None' will remove any identities from the Healthbot
+        /// </summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.ResourceIdentityType? IdentityType { get; set; }
+        /// <summary>
+        /// The list of user identities associated with the resource. The user identity dictionary key references will be ARM resource
+        /// ids in the form: '/subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.ManagedIdentity/userAssignedIdentities/{identityName}'.
+        /// </summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IIdentityUserAssignedIdentities IdentityUserAssignedIdentity { get; set; }
+        /// <summary>SKU of the HealthBot.</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.ISku Sku { get; set; }
+        /// <summary>The name of the HealthBot SKU</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Support.SkuName? SkuName { get; set; }
+        /// <summary>Tags for a HealthBot.</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.Healthbot.Models.Api20201208.IHealthBotUpdateParametersTags Tag { get; set; }
+
+    }
+}
