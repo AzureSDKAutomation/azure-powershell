@@ -47,6 +47,10 @@ ResourceGroupName                             : myresourcegroup
 ShareDeleteRetentionPolicy.Enabled            : True
 ShareDeleteRetentionPolicy.Days               : 5
 ProtocolSettings.Smb.Multichannel.Enabled     : False
+ProtocolSettings.Smb.Versions                 : 
+ProtocolSettings.Smb.AuthenticationMethods    : 
+ProtocolSettings.Smb.KerberosTicketEncryption : 
+ProtocolSettings.Smb.ChannelEncryption        :
 ```
 
 This command enables File share softdelete delete with retention days as 5
@@ -55,14 +59,60 @@ This command enables File share softdelete delete with retention days as 5
 ```powershell
 PS C:\> Update-AzStorageFileServiceProperty -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" -EnableSmbMultichannel $true
 
-StorageAccountName                        : mystorageaccount
-ResourceGroupName                         : myresourcegroup
-ShareDeleteRetentionPolicy.Enabled        : True
-ShareDeleteRetentionPolicy.Days           : 5
-ProtocolSettings.Smb.Multichannel.Enabled : True
+StorageAccountName                            : mystorageaccount
+ResourceGroupName                             : myresourcegroup
+ShareDeleteRetentionPolicy.Enabled            : True
+ShareDeleteRetentionPolicy.Days               : 5
+ProtocolSettings.Smb.Multichannel.Enabled     : True
+ProtocolSettings.Smb.Versions                 : 
+ProtocolSettings.Smb.AuthenticationMethods    : 
+ProtocolSettings.Smb.KerberosTicketEncryption : 
+ProtocolSettings.Smb.ChannelEncryption        :
 ```
 
 This command enables Smb Multichannel, only supported on Premium FileStorage account.
+
+### Example 3: Updates secure smb settings
+```powershell
+PS C:\> Update-AzStorageFileServiceProperty -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" `
+			-SMBProtocolVersion SMB2.1,SMB3.0,SMB3.1.1  `
+			-SMBAuthenticationMethod Kerberos,NTLMv2 `
+			-SMBKerberosTicketEncryption RC4-HMAC,AES-256 `
+			-SMBChannelEncryption AES-128-CCM,AES-128-GCM,AES-256-GCM 
+
+StorageAccountName                            : mystorageaccount
+ResourceGroupName                             : myresourcegroup
+ShareDeleteRetentionPolicy.Enabled            : True
+ShareDeleteRetentionPolicy.Days               : 5
+ProtocolSettings.Smb.Multichannel.Enabled     : True
+ProtocolSettings.Smb.Versions                 : {SMB2.1, SMB3.0, SMB3.1.1}
+ProtocolSettings.Smb.AuthenticationMethods    : {Kerberos, NTLMv2}
+ProtocolSettings.Smb.KerberosTicketEncryption : {RC4-HMAC, AES-256}
+ProtocolSettings.Smb.ChannelEncryption        : {AES-128-CCM, AES-128-GCM, AES-256-GCM}
+```
+
+This command updates secure smb settings.
+
+### Example 4: Clear secure smb settings
+```powershell
+PS C:\> Update-AzStorageFileServiceProperty -ResourceGroupName "myresourcegroup" -AccountName "mystorageaccount" `
+			-SMBProtocolVersion @() `
+			-SMBAuthenticationMethod @() `
+			-SMBKerberosTicketEncryption @() `
+			-SMBChannelEncryption @() 
+
+StorageAccountName                            : mystorageaccount
+ResourceGroupName                             : myresourcegroup
+ShareDeleteRetentionPolicy.Enabled            : True
+ShareDeleteRetentionPolicy.Days               : 5
+ProtocolSettings.Smb.Multichannel.Enabled     : True
+ProtocolSettings.Smb.Versions                 : 
+ProtocolSettings.Smb.AuthenticationMethods    : 
+ProtocolSettings.Smb.KerberosTicketEncryption : 
+ProtocolSettings.Smb.ChannelEncryption        :
+```
+
+This command clears secure smb settings.
 
 ## PARAMETERS
 
