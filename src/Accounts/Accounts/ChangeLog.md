@@ -19,6 +19,10 @@
 -->
 
 ## Upcoming Release
+* Printed auto generated modules' default logs to verbose stream
+
+## Version 2.4.0
+* Added cmdlet `Open-AzSurveyLink`
 * Supported certificate file as input parameter of Connect-AzAccount
 
 ## Version 2.3.0
