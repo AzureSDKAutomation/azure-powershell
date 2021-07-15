@@ -1,0 +1,55 @@
+namespace Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview
+{
+    using static Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Runtime.Extensions;
+
+    /// <summary>Specifies the windows configuration for update management.</summary>
+    public partial class OSProfileWindowsConfiguration :
+        Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IOSProfileWindowsConfiguration,
+        Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IOSProfileWindowsConfigurationInternal
+    {
+
+        /// <summary>Internal Acessors for PatchSetting</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettings Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IOSProfileWindowsConfigurationInternal.PatchSetting { get => (this._patchSetting = this._patchSetting ?? new Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.PatchSettings()); set { {_patchSetting = value;} } }
+
+        /// <summary>Backing field for <see cref="PatchSetting" /> property.</summary>
+        private Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettings _patchSetting;
+
+        /// <summary>Specifies the patch settings.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Origin(Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.PropertyOrigin.Owned)]
+        internal Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettings PatchSetting { get => (this._patchSetting = this._patchSetting ?? new Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.PatchSettings()); set => this._patchSetting = value; }
+
+        /// <summary>Specifies the assessment mode.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Origin(Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.PropertyOrigin.Inlined)]
+        public string PatchSettingAssessmentMode { get => ((Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettingsInternal)PatchSetting).AssessmentMode; set => ((Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettingsInternal)PatchSetting).AssessmentMode = value ?? null; }
+
+        /// <summary>Creates an new <see cref="OSProfileWindowsConfiguration" /> instance.</summary>
+        public OSProfileWindowsConfiguration()
+        {
+
+        }
+    }
+    /// Specifies the windows configuration for update management.
+    public partial interface IOSProfileWindowsConfiguration :
+        Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Runtime.IJsonSerializable
+    {
+        /// <summary>Specifies the assessment mode.</summary>
+        [Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Runtime.Info(
+        Required = false,
+        ReadOnly = false,
+        Description = @"Specifies the assessment mode.",
+        SerializedName = @"assessmentMode",
+        PossibleTypes = new [] { typeof(string) })]
+        string PatchSettingAssessmentMode { get; set; }
+
+    }
+    /// Specifies the windows configuration for update management.
+    internal partial interface IOSProfileWindowsConfigurationInternal
+
+    {
+        /// <summary>Specifies the patch settings.</summary>
+        Microsoft.Azure.PowerShell.Cmdlets.HybridCompute.Models.Api20210610Preview.IPatchSettings PatchSetting { get; set; }
+        /// <summary>Specifies the assessment mode.</summary>
+        string PatchSettingAssessmentMode { get; set; }
+
+    }
+}
